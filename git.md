@@ -22,12 +22,12 @@
 
 ## 補充
 ### 更易懂的blob、tree範例 (by GPT): 
-
+```
 project/
 ├── README.md
 └── src/
     └── main.c
-
+```
 * 對於這個專案，Git 會建立一個 tree 物件表示 project 目錄
 * 這個 tree 會包含兩個項目：一個指向 README.md 檔案的 blob，另一個指向 src/ 目錄的 tree
 * 而 src/ 的 tree 會包含一個項目，指向 main.c 檔案的 blob。
