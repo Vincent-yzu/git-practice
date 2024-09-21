@@ -28,6 +28,7 @@ function fib(n) {  // TODO: implement fibonacci
   }
   
   
+  // output
   fib(0); // 0
   fib(1); // 1
   fib(5); // 5

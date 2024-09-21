@@ -9,7 +9,7 @@ export default class Stack {
         this.#items = [];
     }
 
-    // 在 stack 頂部加入元素i
+    // 在 stack 頂部加入新元素
     push(element) {
         this.#items.push(element);
     }
