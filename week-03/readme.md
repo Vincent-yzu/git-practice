@@ -36,14 +36,14 @@
 # B. Callback 練習
 * 這裡在 function 宣告時傳了一個 callback function, 這使得我們可以根據傳入的 callback function 不同做到一些自定義的處理
 * 像是這裡的寫法是將目前完成工作的時間做為字串傳入 callback function
-![圖片載入失敗...](https://imgur.com/rD2v2Pp "")
+![圖片載入失敗...](https://i.imgur.com/rD2v2Pp "")
 
 * 然後實際使用時定義`console.log(data);`作為 callback function 讓結果直接輸出
 * 最後根據範例程式碼修改, 達到不斷等待執行完成再執行下一步的效果
-![圖片載入失敗...](https://imgur.com/4O1DCAg "")
+![圖片載入失敗...](https://i.imgur.com/4O1DCAg "")
 
 * 結果如下: 
-![圖片載入失敗...](https://imgur.com/Zfy1jKI "")
+![圖片載入失敗...](https://i.imgur.com/Zfy1jKI "")
 
 
 # C. 建立 Express 專案
