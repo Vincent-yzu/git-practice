@@ -1,7 +1,7 @@
 # A. 註冊 AWS 帳號
 
 * 註冊帳號
-    * (尚未註冊)
+    * 確認註冊成功, 且已啟用MFA
 
 * 什麼是 AWS Region, AZ (availability zones)
 
@@ -34,40 +34,27 @@
 
 
 # B. Callback 練習
-* 安裝的 nodejs 版本
-    * nodejs: v20.17.0  (v20是偶數, 代表有支援LTS)
-    * npm: 10.8.2
+* 這裡在 function 宣告時傳了一個 callback function, 這使得我們可以根據傳入的 callback function 不同做到一些自定義的處理
+* 像是這裡的寫法是將目前完成工作的時間做為字串傳入 callback function
+![圖片載入失敗...](https://imgur.com/rD2v2Pp "")
+
+* 然後實際使用時定義`console.log(data);`作為 callback function 讓結果直接輸出
+* 最後根據範例程式碼修改, 達到不斷等待執行完成再執行下一步的效果
+![圖片載入失敗...](https://imgur.com/4O1DCAg "")
+
+* 結果如下: 
+![圖片載入失敗...](https://imgur.com/Zfy1jKI "")
 
 
 # C. 建立 Express 專案
-* (optional) 挑戰題: 有幾種寫法？
-    * 其他寫法(一): 
-        ```
-        // 使用join + eval
-        ar expression = ary.join('+');  // 先把陣列用 join 連成字串 ex. 1+5+3+2
-        ar sum = eval(expression);  // 再使用 eval 執行這個字串的運算
-        ```
-    * 其他寫法(二): 
-        ```
-        // 使用遞迴
-        if (ary.length === 0) return 0; // 終止條件
-        return ary[0] + sum(ary.slice(1)); // 每次累加, 並移除陣列最前方的元素
-        ```
-
-* (optional) 挑戰題: 如果 `sum` 函式的 input 是 n，然後要回傳 1 + 2 + 3 + … + n 的話，一樣不能用 for, while 寫，要怎麼做？
-    * 計算方法改高斯求和公式: 
-        ```
-        var sum = n * (n + 1) / 2;
-        ```
+    * (詳見\backend\readme.md)
 
 
 # D. 分組
-* 安裝的 nodejs 版本
-    * nodejs: v20.17.0  (v20是偶數, 代表有支援LTS)
-    * npm: 10.8.2
+* (尚未分組)
 
 
-# 參考資料
+# 圖片參考資料
 * AWS Region (https://learn.microsoft.com/en-us/azure/reliability/availability-zones-overview?tabs=azure-cli)
 * AWS Region (https://www.w3schools.com/aws/aws_cloudessentials_awsregions.php)
 * AWS Region (https://www.w3schools.com/aws/aws_cloudessentials_awsregions.php)
