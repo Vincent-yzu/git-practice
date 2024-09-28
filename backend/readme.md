@@ -7,20 +7,20 @@
 
         * 可以很明顯地看到底下多了`dependencies`, 其中內容代表這個專案新增了與 express 框架的相依姓
         * `^4.21.0`代表使用 4.21.0 版本, 其中`^`代表允許自動更新到4.XX.X的最新版本, 但不會更新到5.XX.X的版本
-        ![圖片載入失敗...](https://imgur.com/9x3tebx "")
+        ![圖片載入失敗...](https://i.imgur.com/9x3tebx.jpg "")
 
 
     * 觀察 node_modules 裡面有什麼: 
 
         * 資料夾裡面包含以下這些
-        ![圖片載入失敗...](https://imgur.com/EJAfFgp "")
+        ![圖片載入失敗...](https://i.imgur.com/EJAfFgp.jpg "")
 
         * 其中比較值得注意的是 `express/`
             * `index.js`
                 * express 的核心檔案, 定義了主要的功能
                 * 使用 express 時, 被呼叫會回傳一個對應的功能 function
                 * 概念如下: 
-                ![圖片載入失敗...](https://imgur.com/JAnFbFl "")
+                ![圖片載入失敗...](https://i.imgur.com/JAnFbFl.jpg "")
                 * 範例: 建立基本的 HTTP 伺服器 (出自GPT)
 ```javascript
                 const express = require('express');
@@ -59,22 +59,22 @@
 * node app.js 啟動 server
 * 以瀏覽器開啟 http://localhost:3000/ 或是透過指令 curl http://localhost:3000/ 來測試是否有建置成功
     * 確定有成功
-    ![圖片載入失敗...](https://imgur.com/ewUyo5n "")
+    ![圖片載入失敗...](https://i.imgur.com/ewUyo5n.jpg "")
 
 * 上述程式，把要監聽的 port number 寫死在程式碼中，這是一種比較不好的做法，請研究「環境變數」，找找看要怎麼透過環境變數的設定來修改要監聽的 port number（而不是直接去修改 app.js 這個檔案）
     * 將使用 port 的程式碼修改成透過環境變數來取得
-    ![圖片載入失敗...](https://imgur.com/pjAUVEG "")
+    ![圖片載入失敗...](https://i.imgur.com/pjAUVEG.jpg "")
     * 建立`.env` (environment variables) 文件來儲存port number
-    ![圖片載入失敗...](https://imgur.com/YDQiUAH "")
+    ![圖片載入失敗...](https://i.imgur.com/YDQiUAH.jpg "")
     * 然後安裝`dotenv`套件來讀取`.env`中的port number
     * 最後結果: 
-    ![圖片載入失敗...](https://imgur.com/yT8vxOv "")
-    ![圖片載入失敗...](https://imgur.com/or8I4p2 "")
+    ![圖片載入失敗...](https://i.imgur.com/yT8vxOv.jpg "")
+    ![圖片載入失敗...](https://i.imgur.com/or8I4p2.jpg "")
 
 * 注意哪些檔案應該要被放上 github repo 來？ 
     * 依賴的第三方套件 和 .env 環境變數檔 不該上傳
     * 建立`.gitignore`, 讓git提交時自動忽略
-    ![圖片載入失敗...](https://imgur.com/3qlEgaT "")
+    ![圖片載入失敗...](https://i.imgur.com/3qlEgaT.jpg "")
 
 
 
@@ -87,7 +87,7 @@
 * package.json 中的 scripts 這個區塊怎麼用？
     * scripts 區塊可以自定義一些 command line 上常用的指令
     * 例子如下: 
-    ![圖片載入失敗...](https://imgur.com/gpJwScG "")
+    ![圖片載入失敗...](https://i.imgur.com/gpJwScG.jpg "")
     * 定義完後就可以使用 `npm run start` 或 `npm run test` 來快速執行這些指令
 
 * Port number 要怎麼以環境變數來設定？
@@ -102,11 +102,11 @@
 * 範例程式中用 require，但上週的 Stack 是用 import/export，這兩種分別是 JavaScript 引用模組的兩種方式: CJS vs ESM，這兩者分別怎麼用？
     * CommonJS (CJS)
         * 使用 `require('...')` 引入, 然後使用 `module.exports = ...` 匯出
-        ![圖片載入失敗...](https://imgur.com/mF070XE "")
+        ![圖片載入失敗...](https://i.imgur.com/mF070XE.jpg "")
     
     * ES Modules (ESM)
         * 使用 `import ... from (檔案)` 引入, 然後使用 `export ...` 匯出
-        ![圖片載入失敗...](https://imgur.com/TfBNcAT "")
+        ![圖片載入失敗...](https://i.imgur.com/TfBNcAT.jpg "")
     
     * 兩者的比較
 | 特性           | CommonJS (CJS)                              | ES Modules (ESM)                           |
