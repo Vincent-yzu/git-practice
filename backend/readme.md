@@ -22,7 +22,7 @@
                 * 概念如下: <br>
                 ![圖片載入失敗...](https://i.imgur.com/JAnFbFl.jpg "")
                 * 範例: 建立基本的 HTTP 伺服器 (出自GPT)
-```javascript
+                ```javascript
                 const express = require('express');
                 const app = express();
 
@@ -36,10 +36,11 @@
                 app.listen(PORT, () => {
                     console.log(`Server is running on http://localhost:${PORT}`);
                 });
-```
-                * 引入 Express，建立應用程式實例 app。
-                * 使用 app.get 方法定義了一個根路由，當用戶訪問 / 時，伺服器會回應 "Hello World!"。
-                * 最後，使用 app.listen 啟動伺服器，讓它在指定的端口上運行。
+
+                ```
+                    * 引入 Express，建立應用程式實例 app。
+                    * 使用 app.get 方法定義了一個根路由，當用戶訪問 / 時，伺服器會回應 "Hello World!"。
+                    * 最後，使用 app.listen 啟動伺服器，讓它在指定的端口上運行。
 
             * `lib/`包含一些 express 主要功能需要用到的東西
                 * 如: `router/` (定義路由相關設定), `application.js` (定義一些請求處理和錯誤處理的功能), `request.js`和`response.js` (處理HTTP傳輸用)
