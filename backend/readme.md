@@ -120,3 +120,46 @@
 | **優點**          | - 簡單易用<br>- 廣泛支持 Node.js 環境<br>- 同步載入適合伺服器用      | - 現代標準，易於與瀏覽器開發<br>- 靜態分析優化<br>- 支持 Tree Shaking  |
 | **缺點**          | - 不支持非同步載入<br>- 不適合瀏覽器環境   | - 兼容性問題（某些舊版瀏覽器不支援）<br>- 實作上可能較複雜 |
 
+
+
+# 進階題:  (9/29以後才更新的部分)
+
+* `localhost` (http://localhost) 是什麼？
+    * localhost 是一個指向自己電腦本機的網絡地址, 所以不需要網路連接也可以訪問
+    * 因為不須聯網的特性所以常被用來開發時測試用
+    * 在 Windows 中可以在 C:\Windows\System32\drivers\etc\hosts 裡的文件中找到 localhost 的設置
+    * 預設是 `127.0.0.1` (IPv4) 或 `::1` (IPv6)
+
+* `curl` 是什麼？查查看怎麼用 curl 來測試網路連線？常用參數有哪些？
+    * 一個常被用於測試 API 和網絡連接的開源命令列工具
+    * 常見功能如下: 
+
+>基本 GET 請求：<br>
+>curl http://example.com
+
+>顯示詳細請求和響應：<br>
+>curl -v http://example.com
+
+>發送 POST 請求：<br>
+>curl -X POST -d "param1=value1&param2=value2" http://example.com/api
+
+>發送 JSON 數據：<br>
+>curl -X POST -H "Content-Type: application/json" -d '{"key":"value"}' http://example.com/api
+
+>添加自定義標頭：<br>
+>curl -H "Authorization: Bearer YOUR_TOKEN" http://example.com/api
+
+>下載文件：<br>
+>curl -O http://example.com/file.zip
+
+>上傳文件：<br>
+>curl -T localfile.txt ftp://ftp.example.com/ --user username:password
+
+>處理重定向：<br>
+>curl -L http://example.com
+
+>設置超時：<br>
+>curl --max-time 10 http://example.com
+
+>使用代理：<br>
+>curl -x http://proxy-server:port http://example.com
