@@ -3,10 +3,10 @@
 * AWS Web Server 部署部分
 
     - 確定建立新 instance 成功
-    ![圖片載入失敗...](https://i.imgur.com/L5dJ4Qa.jpg "")
+    <br>![圖片載入失敗...](https://i.imgur.com/L5dJ4Qa.jpg "")
 
     - 確定有連線成功
-    ![圖片載入失敗...](https://i.imgur.com/en4w35L.jpg "")
+    <br>![圖片載入失敗...](https://i.imgur.com/en4w35L.jpg "")
 
     - 備註: 
         - 過程中使用 Windows PowerShell 來執行 linux 指令
@@ -66,7 +66,7 @@
     - 特性包括 擅長高流量的處理、低資源消耗、負載均衡比一般雲端平台便宜、能做到很細節的配置設定
     - (具體內容待補充)
     - 以下為示意圖: 
-    ![圖片載入失敗...](https://miro.medium.com/v2/resize:fit:720/format:webp/1*GvbxOyca9BY_mJOmB-Fi8A.png "")
+    <br>![圖片載入失敗...](https://miro.medium.com/v2/resize:fit:720/format:webp/1*GvbxOyca9BY_mJOmB-Fi8A.png "")
 
 
 4. pm2 套件是什麼？有什麼用處？
@@ -86,7 +86,7 @@
     - `Reverse proxy`, 反向代理是指客戶端的請求送到中間代理伺服器後, 然後代理伺服器(如 Nginx)再往內傳給後端伺服器
     - `Forward Proxy`, 正向代理是指客戶端的請求送到中間代理伺服器後, 然後代理伺服器再向外面其他的伺服器轉發請求
     - 以下為示意圖: 
-    ![圖片載入失敗...](https://www.indusface.com/wp-content/uploads/2023/04/Forward-proxy-vs-reverse-proxy-1.png "")
+    <br>![圖片載入失敗...](https://www.indusface.com/wp-content/uploads/2023/04/Forward-proxy-vs-reverse-proxy-1.png "")
 
 6. 在 readme 中提供步驟 9 的 Nginx 設定檔
     - 輸入`sudo nano /etc/nginx/sites-available/default`後的設定檔內容如下:  (預設註解過長為了不影響排版所以已刪除)
@@ -124,7 +124,7 @@
 9. Nginx 的 Log 檔案在哪裡？你怎麼找到的？怎麼看 Nginx 的 Log？
     - 通常位於`/var/log/nginx/`
     - 包含 access.log、error.log
-    ![圖片載入失敗...](https://i.imgur.com/kE6ZbQX.jpg "")
+    <br>![圖片載入失敗...](https://i.imgur.com/kE6ZbQX.jpg "")
     - "NGINX Access Logs and Error Logs"網站中寫到的 (底下參考資料有連結)
     - 以 error.log 為例
     - `2024/10/04 09:43:59 [error] 4523#4523: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 35.87.186.101, server: _, req>`
