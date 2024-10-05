@@ -12,6 +12,7 @@
         - 過程中使用 Windows PowerShell 來執行 linux 指令
         - pm2 無法正確到新變更的檔案, 只有強制重新執行才能正確讀取 (附在最後的問題部分)
 
+<br>
 
 * 注意事項
     * /etc 是什麼的縮寫？這裡通常都放哪些檔案？
@@ -49,6 +50,7 @@
         - 輸入`which app.js`
         - 結果為: (無結果)  (因`git-pratice/backend/`並未儲存在 $PATH 目錄中)
 
+<br>
 
 # /week-04/readme.md 中該有的問題
 
@@ -164,7 +166,7 @@
 
 
 
-
+<br>
 
 # 參考資料
 * Linux Directories Explained in 100 Seconds: https://youtube.com/watch?v=42iQKuQodW4
@@ -182,5 +184,4 @@
 * 使用安全性群組控制AWS 資源的流量: https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/vpc-security-groups.html
 * 安全群組規則: https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/security-group-rules.html
 * NGINX Access Logs and Error Logs: https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs
-* (待整理)
 * GPT: https://chatgpt.com/
