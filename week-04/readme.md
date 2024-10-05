@@ -10,7 +10,7 @@
 
     - 備註: 
         - 過程中使用 Windows PowerShell 來執行 linux 指令
-        - 因之前環境變數的做法是新增`.env`檔來儲存環境變數, 所以第一次失敗後須讓 pm2 強制重新執行才能正確讀取環境變數的更改 (一般的重新執行仍會失敗)
+        - pm2 無法正確到新變更的檔案, 只有強制重新執行才能正確讀取 (附在最後的問題部分)
 
 
 * 注意事項
@@ -45,14 +45,15 @@
         - 但僅限於 $PATH 目錄中可查詢到的檔案和指令
         - 範例: 
         - 輸入`which python`
-        - 結果為: `/usr/bin/python`
+        - 結果為: `/usr/bin/python`  (因這個路徑已被儲存在 $PATH 目錄中)
         - 輸入`which app.js`
-        - 結果為: (無結果)
+        - 結果為: (無結果)  (因`git-pratice/backend/`並未儲存在 $PATH 目錄中)
 
 
 # /week-04/readme.md 中該有的問題
 
-1. instance 的 public IP: 3.27.224.37
+1. instance 的 public IP
+    - 3.27.224.37
 
 2. 什麼是 instance type?
     - instance type 是雲端平台的虛擬伺服器配置
@@ -71,6 +72,7 @@
 
 4. pm2 套件是什麼？有什麼用處？
     - pm2 是一個方便的 nodejs 工具, 提供許多簡短的指令來管理應用程式的運行
+    - 用途包括方便使用者同時管理多個進行中的應用程式、日誌查看、負載平衡等
     - 功能像是這次作業中 app.js 的啟動(`pm2 start app.js`)、重新啟動(`pm2 restart app -f`)、查看日誌(`pm2 logs`) 和 環境變數管理等
     - 如: `pm2 start app.js --name app --update-env -f`
 
@@ -83,10 +85,10 @@
     - 其中`proxy`在這一句中的意思是指 "Nginx 處理請求並轉發的意思"
 
     * 提示 `Reverse proxy` vs `Forward Proxy`
-    - `Reverse proxy`, 反向代理是指客戶端的請求送到中間代理伺服器後, 然後代理伺服器(如 Nginx)再往內傳給後端伺服器
-    - `Forward Proxy`, 正向代理是指客戶端的請求送到中間代理伺服器後, 然後代理伺服器再向外面其他的伺服器轉發請求
-    - 以下為示意圖: 
-    <br>![圖片載入失敗...](https://www.indusface.com/wp-content/uploads/2023/04/Forward-proxy-vs-reverse-proxy-1.png "")
+        - `Reverse proxy`, 反向代理是指客戶端的請求送到中間代理伺服器後, 然後代理伺服器(如 Nginx)再往內傳給後端伺服器
+        - `Forward Proxy`, 正向代理是指客戶端的請求送到中間代理伺服器後, 然後代理伺服器再向外面其他的伺服器轉發請求
+        - 以下為示意圖: 
+        <br>![圖片載入失敗...](https://www.indusface.com/wp-content/uploads/2023/04/Forward-proxy-vs-reverse-proxy-1.png "")
 
 6. 在 readme 中提供步驟 9 的 Nginx 設定檔
     - 輸入`sudo nano /etc/nginx/sites-available/default`後的設定檔內容如下:  (預設註解過長為了不影響排版所以已刪除)
@@ -113,7 +115,15 @@
     ```
 
 7. Security Group 是什麼？用途為何？有什麼設定原則嗎？
-    - (時間不夠先跳過)
+    - Security Group 相當於是私有雲的防火牆, 可針對進出的流量下規則或控制
+    - 可控制的內容包括: IP範圍、傳輸協議、PORT number
+    - 透過控制流量的進出來對網路安全進行管控
+    * 常見的設定原則包括: 
+        - 最小權限原則(Principle of Least Privilege)
+        - 避免一個 Security Group 通用多個 instance
+        - 定期檢查和更新
+    - 以下為示意圖: 
+    <br>![圖片載入失敗...](https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/images/security-group-details.png "")
 
 8. 什麼是 sudo? 為什麼有的時候需要加上 sudo，有時候不用？
     - sudo 的意思是 "superuser do", 相當於 Windows 中使用系統管理員身分執行的意思
@@ -128,21 +138,30 @@
     - "NGINX Access Logs and Error Logs"網站中寫到的 (底下參考資料有連結)
     - 以 error.log 為例
     - `2024/10/04 09:43:59 [error] 4523#4523: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 35.87.186.101, server: _, req>`
-    - 格式為: 
-    - 日期: 2024/10/04
-    - 時間: 09:43:59
-    - 日誌分類: [error]
-    - Process ID: 4523#4523
-    - 連接編號: *1
-    - 錯誤訊息: connect() failed (111: Connection refused)
-    - 上游連接狀態: while connecting to upstream
-    - 客戶端 IP: 35.87.186.101
-    - 伺服器: _
-    - 請求訊息: req>
+    * 格式為: 
+        - 日期: 2024/10/04
+        - 時間: 09:43:59
+        - 日誌分類: [error]
+        - Process ID: 4523#4523
+        - 連接編號: *1
+        - 錯誤訊息: connect() failed (111: Connection refused)
+        - 上游連接狀態: while connecting to upstream
+        - 客戶端 IP: 35.87.186.101
+        - 伺服器: _
+        - 請求訊息: req>
 
 
 10. 其他你在過程中遭遇的問題，有找到解答就記錄下來，沒有可以把問題放著，下次上課討論。如果沒有遇到任何問題，也可以回答「無」
-    - (待整理)
+    - 大多數中途遇到的問題皆已附在上面的內容中, 以下的部分只包含過程中比較大的問題
+
+    * AWS Web Server 部署過程中 pm2 無法正確讀取新變更的檔案
+        - 因為我之前作業環境變數的做法是新增`.env`檔來儲存環境變數
+        - 這次在 linux 主機上把 repo 拉下來時忘記新增環境變數檔導致網頁結果顯示 502 失敗
+        - 結果補上環境變數檔並且讓 pm2 restart 後結果還是一樣, 查看日誌也發現 app.js 讀取的 PORT 是沒有`.env`時的預設 PORT
+        - 後來上網查資料和詢問 GPT 後才解決問題
+        - 最後發現只有讓 pm2 "強制"重新執行才能正確讀取環境變數的更改 (restart 後加上 -f)
+        - 一般的 restart 似乎沒辦法讀取已經開始執行後的即時變更
+
 
 
 
@@ -158,8 +177,10 @@
 * Nginx - 維基百科，自由的百科全書: https://zh.wikipedia.org/zh-tw/Nginx
 * Nginx 是什麼？認識 Web Server 與 Nginx入門教學: https://tw.alphacamp.co/blog/nginx
 * What is NGINX? and how to set it up on Mac.: https://medium.com/@VenuThomas/what-is-nginx-and-how-to-set-it-up-on-mac-107a2482a33a
-* (待整理)
+* What is PM2 and how to use it?: https://www.lucentinnovation.com/blogs/technology-posts/what-is-pm2-and-how-to-use-it
 * What is Reverse Proxy, How Does It Works, and What are Its Benefits?: https://securityboulevard.com/2023/04/what-is-reverse-proxy-how-does-it-works-and-what-are-its-benefits/
+* 使用安全性群組控制AWS 資源的流量: https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/vpc-security-groups.html
+* 安全群組規則: https://docs.aws.amazon.com/zh_tw/vpc/latest/userguide/security-group-rules.html
 * NGINX Access Logs and Error Logs: https://www.digitalocean.com/community/tutorials/nginx-access-logs-error-logs
 * (待整理)
 * GPT: https://chatgpt.com/
