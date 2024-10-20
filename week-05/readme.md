@@ -7,12 +7,12 @@
 - 最後發現驗證要求輸入的"_660d2ea7ec1af5b13f887011f3e5c0a1.vincent112753133.link"必須改成"_660d2ea7ec1af5b13f887011f3e5c0a1"才能通過
 <br>![圖片載入失敗...](https://i.imgur.com/nPCHN1h.jpg "")
 
-- 最後在 AWS EC2 security group 中新增 HTTPS 就成功了
+- 最後把憑證安裝進去、修改 Nginx 的文件後, 並且在 AWS EC2 security group 中新增 HTTPS 就成功了
 <br>![圖片載入失敗...](https://i.imgur.com/evin41V.jpg "")
 
 <br>
 
-# 本州問題
+# 本周問題
 
 1. 你的網址，應該是 https://www.xxx.xxx，點擊過去應該要可以看到個人作業 4 架設的 Express server （由 Nginx proxy 到 Express）
     - 網址: https://www.vincent112753133.link
