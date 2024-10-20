@@ -7,7 +7,8 @@
 - 最後發現驗證要求輸入的"_660d2ea7ec1af5b13f887011f3e5c0a1.vincent112753133.link"必須改成"_660d2ea7ec1af5b13f887011f3e5c0a1"才能通過
 <br>![圖片載入失敗...](https://i.imgur.com/nPCHN1h.jpg "")
 
-- (仍在等待驗證, 尚未將憑證安裝至 AWS EC2 instance 的 Nginx 裡)
+- 最後在 AWS EC2 security group 中新增 HTTPS 就成功了
+<br>![圖片載入失敗...](https://i.imgur.com/evin41V.jpg "")
 
 <br>
 
