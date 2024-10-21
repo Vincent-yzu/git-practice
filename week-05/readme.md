@@ -29,6 +29,7 @@
 4. DNS 的 NS record 是什麼？
     - NS record 是 Name Server Record 的縮寫, 記錄這個網域的伺服器, 讓 DNS 可以查詢到該向哪個伺服器送出請求
     - 概念相當於是網域的負責人名單, 讓 DNS 知道想要這個網域的資料該去哪裡找
+    - 兩者的示意圖: 
     <br>![圖片載入失敗...](https://i.imgur.com/kSH9oeD.jpg "")
 
 5. Domain Name vs FQDN vs URL 這三者分別為何？
