@@ -4,10 +4,14 @@
 <br>![圖片載入失敗...](https://i.imgur.com/2bfxMpH.jpg "")
 
 - 在 zerossl 的驗證卡了很久
-- 最後發現驗證要求輸入的"_660d2ea7ec1af5b13f887011f3e5c0a1.vincent112753133.link"必須改成"_660d2ea7ec1af5b13f887011f3e5c0a1"才能通過
+- 最後發現驗證要求輸入的"_660d2ea7ec1af5b13f887011f3e5c0a1.vincent112753133.link"必須改成"_660d2ea7ec1af5b13f887011f3e5c0a1"才能通過 (官網上的說明是錯的)
+- 此外驗證過程若是先點擊 mail 驗證再改成 DNS 驗證也會出錯導致卡住
+- 重試了好幾次後最後成功了
+- 驗證卡了很久的截圖: 
 <br>![圖片載入失敗...](https://i.imgur.com/nPCHN1h.jpg "")
 
-- 最後把憑證安裝進去、修改 Nginx 的文件後, 並且在 AWS EC2 security group 中新增 HTTPS 就成功了
+- 最後把憑證安裝進去、修改 Nginx 的文件並重啟 Nginx
+- 到這裡仍然失敗, 研究了一段時間後發現要在 AWS EC2 security group 中新增 HTTPS 就成功了
 <br>![圖片載入失敗...](https://i.imgur.com/evin41V.jpg "")
 
 <br>
