@@ -29,9 +29,8 @@
     - 缺乏查看、修改防火牆規則的經驗, 這部分反覆試了不少次, 花了不少時間
 - Where we got lucky
     - 停止並禁止 srv 自動啟動沒有導致更多的衍伸問題
-
-
 <br>
+
 # Timeline  
 - 建立好環境後, 執行`curl localhost`確認目前是假的 Web Server  
 <br>![圖片載入失敗...](https://i.imgur.com/LTqTvtw.jpg "")
