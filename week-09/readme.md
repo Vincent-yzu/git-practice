@@ -20,10 +20,8 @@
 | 停止 srv 執行, 並禁止服務自動啟動               | Prevent  | srv 佔據 80 port     |
 | 修正防火牆對 80 port 的拒絕規則, 並保存規則避免重新啟動後再次出現問題 | Prevent  | 防火牆拒絕 80 port   |
 | 將 myweb 目錄的擁有者改成 www-data (Nginx 和其他 Web Server 文件讀取的預設用戶), 並允許存取 | Prevent | myweb 目錄沒有存取權限 |
-
-
-
 <br>
+
 # Lessons Learned
 - What went well
     - 順利停止 srv 執行, 沒有其他依賴 srv 的服務
@@ -34,7 +32,7 @@
 
 
 <br>
-# Timeline
+# Timeline  
 - 建立好環境後, 執行`curl localhost`確認目前是假的 Web Server  
 <br>![圖片載入失敗...](https://i.imgur.com/LTqTvtw.jpg "")
 - 嘗試啟動 nginx, 發現失敗後查看當前問題
