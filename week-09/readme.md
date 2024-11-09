@@ -36,7 +36,7 @@
 <br>
 # Timeline
 - 建立好環境後, 執行`curl localhost`確認目前是假的 Web Server
-<br> ![圖片載入失敗...](https://i.imgur.com/LTqTvtw.jpg "")
+<br>![](https://i.imgur.com/LTqTvtw.jpg)
 - 嘗試啟動 nginx, 發現失敗後查看當前問題
 <br>![圖片載入失敗...](https://i.imgur.com/8UZ708a.jpg "")
 <br>![圖片載入失敗...](https://i.imgur.com/MrmS4gZ.jpg "")
