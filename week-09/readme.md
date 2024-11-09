@@ -13,12 +13,13 @@
     3. 修正防火牆的拒絕規則並保存
     4. 修改真正的 Web Server (myweb) 目錄的存取權限
 - Action Items: <br>
-| Action Item              | Type                       | Bug                       |
-|-------------------|--------------------------------------|----------------------------------------|
-| 移除 Nginx 配置文件裡多的';'          | Prevent                            | Nginx 配置文件的';'問題                                 |
-| 停止 srv 執行, 並禁止服務自動啟動          | Prevent            | srv 佔據 80 port               |
-| 修正防火牆對 80 port 的拒絕規則, 並保存規則避免重新啟動後再次出現問題       | Prevent                            | 防火牆拒絕 80 port                            |
-| 將 myweb 目錄的擁有者改成 www-data (Nginx 和其他 Web Server 文件讀取的預設用戶), 並允許存取        | Prevent                    | myweb 目錄沒有存取權限                      |
+| Action Item | Type | Bug |
+|-------------|------|-----|
+| 移除 Nginx 配置文件裡多的';' | Prevent | Nginx 配置文件的';'問題 |
+| 停止 srv 執行, 並禁止服務自動啟動 | Prevent | srv 佔據 80 port |
+| 修正防火牆對 80 port 的拒絕規則, 並保存規則避免重新啟動後再次出現問題 | Prevent | 防火牆拒絕 80 port |
+| 將 myweb 目錄的擁有者改成 www-data (Nginx 和其他 Web Server 文件讀取的預設用戶), 並允許存取 | Prevent | myweb 目錄沒有存取權限 |
+
 
 <br>
 # Lessons Learned
