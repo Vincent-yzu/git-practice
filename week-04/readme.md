@@ -55,7 +55,7 @@
 # /week-04/readme.md 中該有的問題
 
 1. instance 的 public IP
-    - 3.27.224.37
+    - [54.252.218.191](https://54.252.218.191/)   (11/16更: 因後來按錯不小心重啟EC2所以更新IP)
 
 2. 什麼是 instance type?
     - instance type 是雲端平台的虛擬伺服器配置
